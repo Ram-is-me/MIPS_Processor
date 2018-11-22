@@ -43,7 +43,7 @@ begin
     end
 
     6'b001000: begin // ADD immediate instruction
-        assign alu_op  = 2'b00;
+        // assign alu_op  = 2'b00; same as lw/sw/default
         assign alu_src = 1;
         assign regWrite = 1;
     end
