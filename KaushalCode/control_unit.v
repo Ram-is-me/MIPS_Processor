@@ -1,0 +1,49 @@
+module control_unit(opcode, alu_op, alu_src, );
+
+    input [5:0]opcode;
+
+    output reg [1:0]alu_op;
+    output reg alu_src;
+
+always @(opcode)
+begin
+
+    assign regDst = 0;
+    assign jump = 0;
+    assign branch = 0;
+    assign memRead = 0;
+    assign memtoReg = 0;
+    assign alu_op = 2'b00;
+    assign memWrite = 0;
+    assign alu_src = 0;
+    assign regWrite = 0;
+
+    case(opcode)
+    6'b000000: begin // R format instruction -- includes add,sub,mul,
+        assign regDst = 1;
+        assign alu_op = 2'b10;
+        assign regWrite = 1;
+    end
+
+    6'b100011: begin // lw instruction
+        assign memRead = 1;
+        assign memtoReg = 1;
+        assign alu_src = 1;
+        assign regWrite = 1;
+    end
+    
+    6'b101011: begin // sw instruction
+        assign memWrite = 1;
+        assign alu_src = 1;
+    end
+
+    6'b000100: begin // BEQ instruction
+        assign branch = 1;
+        assign alu_op = 2'b01;
+    end
+
+
+    endcase()
+
+end
+endmodule // control_unit
