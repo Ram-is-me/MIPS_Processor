@@ -14,6 +14,7 @@ always @(operand1, operand2, alu_ctrl) begin
       4'b0001:  assign res= operand1 | operand2;
       4'b0010:  assign res= operand1 + operand2;
       4'b0011:  assign res= operand1 - operand2;
+      4'b0100:  assign res= operand1 * operand2;
     endcase
 
     assign flag_zero = (res == 0)? 1 : 0;
