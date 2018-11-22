@@ -1,0 +1,40 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x841730 .scope module, "alu_mux" "alu_mux" 2 1;
+ .timescale 0 0;
+v0x841820_0 .net "alu_src", 0 0, C4<z>; 0 drivers
+v0x883430_0 .net "data2", 0 0, C4<z>; 0 drivers
+v0x8834d0_0 .net "imm", 0 0, C4<z>; 0 drivers
+v0x883570_0 .var "operand2", 0 0;
+E_0x841620 .event edge, v0x8834d0_0, v0x883430_0, v0x841820_0;
+    .scope S_0x841730;
+T_0 ;
+    %wait E_0x841620;
+    %load/v 8, v0x841820_0, 1;
+    %cmpi/u 8, 0, 1;
+    %jmp/1 T_0.0, 6;
+    %cmpi/u 8, 1, 1;
+    %jmp/1 T_0.1, 6;
+    %jmp T_0.2;
+T_0.0 ;
+    %load/v 8, v0x883430_0, 1;
+    %cassign/v v0x883570_0, 8, 1;
+    %cassign/link v0x883570_0, v0x883430_0;
+    %jmp T_0.2;
+T_0.1 ;
+    %load/v 9, v0x8834d0_0, 1;
+    %cassign/v v0x883570_0, 9, 1;
+    %cassign/link v0x883570_0, v0x8834d0_0;
+    %jmp T_0.2;
+T_0.2 ;
+    %jmp T_0;
+    .thread T_0, $push;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "alu_mux.v";
