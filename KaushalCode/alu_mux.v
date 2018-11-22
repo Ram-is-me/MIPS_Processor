@@ -1,17 +1,17 @@
 module alu_mux(alu_src, data2, imm, operand2);
 
 input alu_src;
-input data2;
-input imm;
-output reg operand2;
+input [31:0]data2;
+input [15:0]imm;
+output reg [31:0]operand2;
 
-always@(alu_src, data2, imm)
+always@(*)
 begin 
 
 case (alu_src)
 
-  0: assign operand2 = data2;
-  1: assign operand2 = imm;
+  0: operand2 = data2;
+  1: operand2 = imm;
 
 endcase
 end
