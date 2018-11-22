@@ -1,0 +1,310 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0xe89690 .scope module, "RegisterFile" "RegisterFile" 2 1;
+ .timescale 0 0;
+v0xeb3e40_0 .var "data1", 31 0;
+v0xed6b10_0 .var "data2", 31 0;
+v0xed6bb0_0 .net "rdat1", 31 0, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; 0 drivers
+v0xed6c50_0 .net "rdat2", 31 0, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; 0 drivers
+v0xed6d00_0 .net "reg1", 5 0, C4<zzzzzz>; 0 drivers
+v0xed6da0_0 .net "reg2", 5 0, C4<zzzzzz>; 0 drivers
+v0xed6e80_0 .net "reg3", 5 0, C4<zzzzzz>; 0 drivers
+v0xed6f20_0 .net "reg_dest", 0 0, C4<z>; 0 drivers
+v0xed7010_0 .net "reg_write", 0 0, C4<z>; 0 drivers
+v0xed70b0 .array "rf", 0 31, 31 0;
+v0xed76a0_0 .net "wdat", 31 0, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; 0 drivers
+v0xed7740_0 .var "wreg", 5 0;
+v0xed70b0_0 .array/port v0xed70b0, 0;
+v0xed70b0_1 .array/port v0xed70b0, 1;
+v0xed70b0_2 .array/port v0xed70b0, 2;
+E_0xeb15f0/0 .event edge, v0xed6d00_0, v0xed70b0_0, v0xed70b0_1, v0xed70b0_2;
+v0xed70b0_3 .array/port v0xed70b0, 3;
+v0xed70b0_4 .array/port v0xed70b0, 4;
+v0xed70b0_5 .array/port v0xed70b0, 5;
+v0xed70b0_6 .array/port v0xed70b0, 6;
+E_0xeb15f0/1 .event edge, v0xed70b0_3, v0xed70b0_4, v0xed70b0_5, v0xed70b0_6;
+v0xed70b0_7 .array/port v0xed70b0, 7;
+v0xed70b0_8 .array/port v0xed70b0, 8;
+v0xed70b0_9 .array/port v0xed70b0, 9;
+v0xed70b0_10 .array/port v0xed70b0, 10;
+E_0xeb15f0/2 .event edge, v0xed70b0_7, v0xed70b0_8, v0xed70b0_9, v0xed70b0_10;
+v0xed70b0_11 .array/port v0xed70b0, 11;
+v0xed70b0_12 .array/port v0xed70b0, 12;
+v0xed70b0_13 .array/port v0xed70b0, 13;
+v0xed70b0_14 .array/port v0xed70b0, 14;
+E_0xeb15f0/3 .event edge, v0xed70b0_11, v0xed70b0_12, v0xed70b0_13, v0xed70b0_14;
+v0xed70b0_15 .array/port v0xed70b0, 15;
+v0xed70b0_16 .array/port v0xed70b0, 16;
+v0xed70b0_17 .array/port v0xed70b0, 17;
+v0xed70b0_18 .array/port v0xed70b0, 18;
+E_0xeb15f0/4 .event edge, v0xed70b0_15, v0xed70b0_16, v0xed70b0_17, v0xed70b0_18;
+v0xed70b0_19 .array/port v0xed70b0, 19;
+v0xed70b0_20 .array/port v0xed70b0, 20;
+v0xed70b0_21 .array/port v0xed70b0, 21;
+v0xed70b0_22 .array/port v0xed70b0, 22;
+E_0xeb15f0/5 .event edge, v0xed70b0_19, v0xed70b0_20, v0xed70b0_21, v0xed70b0_22;
+v0xed70b0_23 .array/port v0xed70b0, 23;
+v0xed70b0_24 .array/port v0xed70b0, 24;
+v0xed70b0_25 .array/port v0xed70b0, 25;
+v0xed70b0_26 .array/port v0xed70b0, 26;
+E_0xeb15f0/6 .event edge, v0xed70b0_23, v0xed70b0_24, v0xed70b0_25, v0xed70b0_26;
+v0xed70b0_27 .array/port v0xed70b0, 27;
+v0xed70b0_28 .array/port v0xed70b0, 28;
+v0xed70b0_29 .array/port v0xed70b0, 29;
+v0xed70b0_30 .array/port v0xed70b0, 30;
+E_0xeb15f0/7 .event edge, v0xed70b0_27, v0xed70b0_28, v0xed70b0_29, v0xed70b0_30;
+v0xed70b0_31 .array/port v0xed70b0, 31;
+E_0xeb15f0/8 .event edge, v0xed70b0_31, v0xed7740_0, v0xed7010_0, v0xed76a0_0;
+E_0xeb15f0 .event/or E_0xeb15f0/0, E_0xeb15f0/1, E_0xeb15f0/2, E_0xeb15f0/3, E_0xeb15f0/4, E_0xeb15f0/5, E_0xeb15f0/6, E_0xeb15f0/7, E_0xeb15f0/8;
+E_0xeb1a40 .event edge, v0xed6f20_0, v0xed6da0_0, v0xed6e80_0;
+S_0xeb3cb0 .scope generate, "genblk1" "genblk1" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb3da8 .param/l "i" 2 24, +C4<01000>;
+S_0xeb3b20 .scope generate, "genblk01" "genblk01" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb3c18 .param/l "i" 2 24, +C4<01001>;
+S_0xeb3990 .scope generate, "genblk001" "genblk001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb3a88 .param/l "i" 2 24, +C4<01010>;
+S_0xeb3800 .scope generate, "genblk0001" "genblk0001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb38f8 .param/l "i" 2 24, +C4<01011>;
+S_0xeb3670 .scope generate, "genblk00001" "genblk00001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb3768 .param/l "i" 2 24, +C4<01100>;
+S_0xeb34e0 .scope generate, "genblk000001" "genblk000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb35d8 .param/l "i" 2 24, +C4<01101>;
+S_0xeb3350 .scope generate, "genblk0000001" "genblk0000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb3448 .param/l "i" 2 24, +C4<01110>;
+S_0xeb31c0 .scope generate, "genblk00000001" "genblk00000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb32b8 .param/l "i" 2 24, +C4<01111>;
+S_0xeb3030 .scope generate, "genblk000000001" "genblk000000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb3128 .param/l "i" 2 24, +C4<010000>;
+S_0xeb2ea0 .scope generate, "genblk0000000001" "genblk0000000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xeb2f98 .param/l "i" 2 24, +C4<010001>;
+S_0xeb2d50 .scope generate, "genblk00000000001" "genblk00000000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xebf668 .param/l "i" 2 24, +C4<010010>;
+S_0xeb2c40 .scope generate, "genblk000000000001" "genblk000000000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xebebf8 .param/l "i" 2 24, +C4<010011>;
+S_0xeb2b50 .scope generate, "genblk0000000000001" "genblk0000000000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xebedd8 .param/l "i" 2 24, +C4<010100>;
+S_0xeb2a60 .scope generate, "genblk00000000000001" "genblk00000000000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xe89178 .param/l "i" 2 24, +C4<010101>;
+S_0xeb2970 .scope generate, "genblk000000000000001" "genblk000000000000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xe8a1f8 .param/l "i" 2 24, +C4<010110>;
+S_0xeb2880 .scope generate, "genblk0000000000000001" "genblk0000000000000001" 2 24, 2 24, S_0xe89690;
+ .timescale 0 0;
+P_0xebefa8 .param/l "i" 2 24, +C4<010111>;
+    .scope S_0xeb3cb0;
+T_0 ;
+    %ix/load 3, 8, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_0 ;
+    %end;
+    .thread T_0;
+    .scope S_0xeb3b20;
+T_1 ;
+    %ix/load 3, 9, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_1 ;
+    %end;
+    .thread T_1;
+    .scope S_0xeb3990;
+T_2 ;
+    %ix/load 3, 10, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_2 ;
+    %end;
+    .thread T_2;
+    .scope S_0xeb3800;
+T_3 ;
+    %ix/load 3, 11, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_3 ;
+    %end;
+    .thread T_3;
+    .scope S_0xeb3670;
+T_4 ;
+    %ix/load 3, 12, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_4 ;
+    %end;
+    .thread T_4;
+    .scope S_0xeb34e0;
+T_5 ;
+    %ix/load 3, 13, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_5 ;
+    %end;
+    .thread T_5;
+    .scope S_0xeb3350;
+T_6 ;
+    %ix/load 3, 14, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_6 ;
+    %end;
+    .thread T_6;
+    .scope S_0xeb31c0;
+T_7 ;
+    %ix/load 3, 15, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_7 ;
+    %end;
+    .thread T_7;
+    .scope S_0xeb3030;
+T_8 ;
+    %ix/load 3, 16, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_8 ;
+    %end;
+    .thread T_8;
+    .scope S_0xeb2ea0;
+T_9 ;
+    %ix/load 3, 17, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_9 ;
+    %end;
+    .thread T_9;
+    .scope S_0xeb2d50;
+T_10 ;
+    %ix/load 3, 18, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_10 ;
+    %end;
+    .thread T_10;
+    .scope S_0xeb2c40;
+T_11 ;
+    %ix/load 3, 19, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_11 ;
+    %end;
+    .thread T_11;
+    .scope S_0xeb2b50;
+T_12 ;
+    %ix/load 3, 20, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_12 ;
+    %end;
+    .thread T_12;
+    .scope S_0xeb2a60;
+T_13 ;
+    %ix/load 3, 21, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_13 ;
+    %end;
+    .thread T_13;
+    .scope S_0xeb2970;
+T_14 ;
+    %ix/load 3, 22, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_14 ;
+    %end;
+    .thread T_14;
+    .scope S_0xeb2880;
+T_15 ;
+    %ix/load 3, 23, 0; address
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0xed70b0, 0, 0;
+t_15 ;
+    %end;
+    .thread T_15;
+    .scope S_0xe89690;
+T_16 ;
+    %set/v v0xeb3e40_0, 0, 32;
+    %end;
+    .thread T_16;
+    .scope S_0xe89690;
+T_17 ;
+    %set/v v0xed6b10_0, 0, 32;
+    %end;
+    .thread T_17;
+    .scope S_0xe89690;
+T_18 ;
+    %wait E_0xeb1a40;
+    %load/v 8, v0xed6f20_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_18.0, 4;
+    %load/v 8, v0xed6da0_0, 6;
+    %ix/load 0, 6, 0;
+    %assign/v0 v0xed7740_0, 0, 8;
+    %jmp T_18.1;
+T_18.0 ;
+    %load/v 8, v0xed6e80_0, 6;
+    %ix/load 0, 6, 0;
+    %assign/v0 v0xed7740_0, 0, 8;
+T_18.1 ;
+    %jmp T_18;
+    .thread T_18, $push;
+    .scope S_0xe89690;
+T_19 ;
+    %wait E_0xeb15f0;
+    %ix/getv 3, v0xed6d00_0;
+    %load/av 8, v0xed70b0, 32;
+    %set/v v0xeb3e40_0, 8, 32;
+    %ix/getv 3, v0xed7740_0;
+    %load/av 8, v0xed70b0, 32;
+    %set/v v0xed6b10_0, 8, 32;
+    %load/v 8, v0xed7010_0, 1;
+    %mov 9, 0, 2;
+    %cmpi/u 8, 1, 3;
+    %jmp/0xz  T_19.0, 4;
+    %load/v 8, v0xed76a0_0, 32;
+    %ix/getv 3, v0xed7740_0;
+   %jmp/1 t_16, 4;
+   %ix/load 1, 0, 0;
+   %set/av v0xed70b0, 8, 32;
+t_16 ;
+T_19.0 ;
+    %jmp T_19;
+    .thread T_19, $push;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "RegisterFile.v";
