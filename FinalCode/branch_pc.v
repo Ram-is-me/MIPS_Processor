@@ -2,7 +2,7 @@ module branch_pc(in_pc,imm,branch_pc);
 
   input [31:0]in_pc;
   input [15:0]imm;
-  output reg [31:0] branch_pc;
+  output reg [31:0] branch_pc=0;
 
   reg [31:0] temp_pc;
 

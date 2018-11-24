@@ -8,7 +8,7 @@ module processor();
     wire [15:0] immediate;
     wire [25:0] jumper;
     wire [31:0] write_data, read_data1, read_data2;
-    wire [31:0] new_pc,in_pc,out_pc,temp1_pc,inst,jumper_pc,temp2_pc;
+    wire [31:0] new_pc,temp_pc,inst,jump_pc,branch_pc,pc;
     wire [1:0] alu_op;
     wire [3:0] alu_control;
     wire alu_src;
@@ -96,17 +96,17 @@ module processor();
       .in_pc(pc),
       .jumper(jumper),
       .jump_pc(jump_pc),
-      .out_pc(temp1_pc)
+      .out_pc(temp_pc)
     );
 
   branch_pc branch_pc(
-    .in_pc(temp1_pc),
-    .imm(imm),
+    .in_pc(temp_pc),
+    .imm(immediate),
     .branch_pc(branch_pc)
   );
 
   new_pc new_pc(
-    .in_pc(temp1_pc),
+    .in_pc(temp_pc),
     .jump_pc(jump_pc),
     .branch_pc(branch_pc),
     .jump(jump),

@@ -1,0 +1,249 @@
+$date
+	Sat Nov 24 15:00:38 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module processor $end
+$var wire 32 ! temp_pc [31:0] $end
+$var wire 32 " pc [31:0] $end
+$var wire 32 # new_pc [31:0] $end
+$var wire 32 $ jump_pc [31:0] $end
+$var wire 32 % branch_pc [31:0] $end
+$var reg 1 & branch $end
+$var reg 16 ' imm [15:0] $end
+$var reg 1 ( jump $end
+$var reg 26 ) jumper [25:0] $end
+$scope module Branch_pc $end
+$var wire 16 * imm [15:0] $end
+$var wire 32 + in_pc [31:0] $end
+$var reg 32 , branch_pc [31:0] $end
+$var reg 32 - temp_pc [31:0] $end
+$upscope $end
+$scope module Jump_pc $end
+$var wire 26 . jumper [25:0] $end
+$var wire 32 / in_pc [31:0] $end
+$var reg 32 0 jump_pc [31:0] $end
+$var reg 32 1 out_pc [31:0] $end
+$upscope $end
+$scope module New_pc $end
+$var wire 1 & branch $end
+$var wire 32 2 branch_pc [31:0] $end
+$var wire 32 3 in_pc [31:0] $end
+$var wire 1 ( jump $end
+$var wire 32 4 jump_pc [31:0] $end
+$var reg 32 5 new_pc [31:0] $end
+$var reg 32 6 temp_pc [31:0] $end
+$upscope $end
+$scope module PC $end
+$var wire 32 7 in_pc [31:0] $end
+$var reg 1 8 clk $end
+$var reg 32 9 out_pc [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 9
+18
+b100 7
+b100 6
+b100 5
+b0 4
+b100 3
+b100 2
+b100 1
+b0 0
+b0 /
+b0 .
+b0 -
+b100 ,
+b100 +
+b0 *
+b0 )
+0(
+b0 '
+0&
+b100 %
+b0 $
+b100 #
+b0 "
+b100 !
+$end
+#5
+08
+#10
+b1000 %
+b1000 ,
+b1000 2
+b1000 #
+b1000 5
+b1000 7
+b1000 6
+b1000 !
+b1000 +
+b1000 1
+b1000 3
+b100 "
+b100 /
+b100 9
+18
+#15
+08
+#20
+b1100 %
+b1100 ,
+b1100 2
+b1100 #
+b1100 5
+b1100 7
+b1100 6
+b1100 !
+b1100 +
+b1100 1
+b1100 3
+b1000 "
+b1000 /
+b1000 9
+18
+#25
+08
+#30
+b10000 %
+b10000 ,
+b10000 2
+b10000 #
+b10000 5
+b10000 7
+b10000 6
+b10000 !
+b10000 +
+b10000 1
+b10000 3
+b1100 "
+b1100 /
+b1100 9
+18
+#35
+08
+#40
+b10100 %
+b10100 ,
+b10100 2
+b10100 #
+b10100 5
+b10100 7
+b10100 6
+b10100 !
+b10100 +
+b10100 1
+b10100 3
+b10000 "
+b10000 /
+b10000 9
+18
+#45
+08
+#50
+b11000 %
+b11000 ,
+b11000 2
+b11000 6
+b11000 !
+b11000 +
+b11000 1
+b11000 3
+b101000 #
+b101000 5
+b101000 7
+b10100 "
+b10100 /
+b10100 9
+b101000 $
+b101000 0
+b101000 4
+18
+b1010 )
+b1010 .
+1(
+#55
+08
+#60
+b101100 %
+b101100 ,
+b101100 2
+b101100 #
+b101100 5
+b101100 7
+b101100 6
+b101100 !
+b101100 +
+b101100 1
+b101100 3
+b101000 "
+b101000 /
+b101000 9
+18
+0(
+#65
+08
+#70
+b1100000 #
+b1100000 5
+b1100000 7
+b1100000 6
+b110000 !
+b110000 +
+b110000 1
+b110000 3
+b1100000 %
+b1100000 ,
+b1100000 2
+b101100 "
+b101100 /
+b101100 9
+b110000 -
+18
+b1100 '
+b1100 *
+1&
+#75
+08
+#80
+b10010100 %
+b10010100 ,
+b10010100 2
+b1100100 #
+b1100100 5
+b1100100 7
+b1100100 6
+b1100100 !
+b1100100 +
+b1100100 1
+b1100100 3
+b1100000 "
+b1100000 /
+b1100000 9
+18
+0&
+#85
+08
+#90
+b10011000 %
+b10011000 ,
+b10011000 2
+b1101000 #
+b1101000 5
+b1101000 7
+b1101000 6
+b1101000 !
+b1101000 +
+b1101000 1
+b1101000 3
+b1100100 "
+b1100100 /
+b1100100 9
+18
