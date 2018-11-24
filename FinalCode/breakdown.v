@@ -4,7 +4,7 @@ module breakdown(inst,op,func,rs,rt,rd,imm,jumper);
   output [5:0]op, func;
   output [4:0] rs,rt,rd;
   output [15:0] imm;
-  output [25:0] jump
+  output [25:0] jumper;
   
   assign op = inst[31:26];
   assign rs = inst[25:21];

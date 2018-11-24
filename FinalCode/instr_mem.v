@@ -1,6 +1,6 @@
 module instr_mem(pc, inst);
 
-    input [31:0]pc;
+    input [31:0] pc;
     reg [15:0] temp_pc;
     output reg [31:0]inst;
 

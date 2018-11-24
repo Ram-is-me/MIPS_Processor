@@ -1,4 +1,4 @@
-module DataMem(alu_res, write_data, mem_write, mem_read, mem_to_reg,out_data);
+module DataMem(alu_res, write_data, mem_write, mem_read, mem_to_reg, out_data);
 
   input [31:0] alu_res,write_data;
   input mem_read,mem_to_reg,mem_write;

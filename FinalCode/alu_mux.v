@@ -8,10 +8,10 @@ output reg [31:0]operand2;
 always@(*)
 begin 
 
-case (alu_src)
+  case (alu_src)
 
-  0: operand2 = data2;
-  1: operand2 = imm;
+    0: operand2 = data2;
+    1: operand2 = imm;
 
 endcase
 end

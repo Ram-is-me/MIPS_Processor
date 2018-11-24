@@ -16,7 +16,7 @@ module control_unit(opcode, alu_op, alu_src, regDest, jump, branch, memRead, mem
 always @(opcode)
 begin
 
-    assign regDst = 0;
+    assign regDest = 0;
     assign jump = 0;
     assign branch = 0;
     assign memRead = 0;
@@ -28,7 +28,7 @@ begin
 
     case(opcode)
     6'b000000: begin // R format instruction -- includes add,sub,mul,
-        assign regDst = 1;
+        assign regDest = 1;
         assign alu_op = 2'b10;
         assign regWrite = 1;
     end
@@ -58,8 +58,8 @@ begin
 
     6'b000010: begin // JUMP instruction
         assign jump = 1;
-
-    endcase()
+    end
+    endcase
 
 end
 endmodule // control_unit

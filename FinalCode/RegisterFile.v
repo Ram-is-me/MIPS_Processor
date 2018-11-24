@@ -1,9 +1,9 @@
 module RegisterFile(reg1, reg2, reg3, wdat, rdat1, rdat2, reg_dest, reg_write);
 
 //INPUT SIGNALS
-input [5:0] reg1; //Read Register 1
-input [5:0] reg2; //Read Register 2
-input [5:0] reg3; //Read Register 3
+input [4:0] reg1; //Read Register 1
+input [4:0] reg2; //Read Register 2
+input [4:0] reg3; //Read Register 3
 input [31:0] wdat; //Write Data
 input reg_dest; //Register Destination Signal
 input reg_write; //Register Write Signal
