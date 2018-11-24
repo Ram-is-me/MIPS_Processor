@@ -1,9 +1,15 @@
 module pc(in_pc, out_pc);
 
   input [31:0]in_pc;
-  reg [31:0]pc;
-  reg clk;
-  output reg [31:0]out_pc;
+  reg [31:0]pc = 0;
+  reg clk = 0;
+  output [31:0]out_pc;
+
+  always
+  begin
+    #10;
+    clk=~clk;
+  end
 
   always@(in_pc)
   begin

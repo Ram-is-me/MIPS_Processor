@@ -3,7 +3,7 @@ module DataMem(alu_res, write_data, mem_write, mem_read, mem_to_reg,out_data);
   input [31:0] alu_res,write_data;
   input mem_read,mem_to_reg,mem_write;
 
-  reg [31:0] data [1024:0];
+  reg [31:0] data [1023:0];
   reg [31:0] temp_data;
   reg [9:0] alu_temp; 
 
