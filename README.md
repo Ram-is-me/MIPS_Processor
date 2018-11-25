@@ -24,7 +24,7 @@ The file 'instr.txt' contains binar representation of the assembly code to multi
 
 The file 'data.txt' contains the 32 bit data values which represent the matrix.
 
-Team Members:
-Ram S - IMT2017521 
-Rathin Bhargava - IMT2017522 
-Kaushal Mittal - IMT2017024
+## Team Members:
+* Ram S - IMT2017521 
+* Rathin Bhargava - IMT2017522 
+* Kaushal Mittal - IMT2017024
