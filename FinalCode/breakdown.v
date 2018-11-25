@@ -1,5 +1,8 @@
 module breakdown(inst,op,func,rs,rt,rd,imm,jumper);
 
+  // This module is nothing but a breakdown of the instruction to be used by other modules
+  // It just makes life easier
+
   input [31:0] inst;
   output [5:0]op, func;
   output [4:0] rs,rt,rd;
@@ -11,6 +14,6 @@ module breakdown(inst,op,func,rs,rt,rd,imm,jumper);
   assign rt = inst[20:16];
   assign rd = inst[15:11];
   assign func = inst[5:0];
-  assign imm = inst[15:0];
+  assign imm = inst[15:0]; 
   assign jumper = inst[25:0];
 endmodule

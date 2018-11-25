@@ -1,5 +1,9 @@
 module new_pc(in_pc,jump_pc,branch_pc,jump,branch,new_pc);
 
+  // This module is the final module which decides between taking a branch, jumping or simply adding by 4
+  // new_pc is the address of the next instruction to be fetched
+  // in_pc is pc simply added by 4
+  
   input [31:0]in_pc,jump_pc,branch_pc;
   input jump,branch;
 

@@ -1,24 +1,16 @@
 module instr_mem(pc, inst);
 
+    // This module takes care of reading the instructions from a file (initially) and later fetching them from memory one by one
     input [31:0]pc;
     reg [15:0] temp_pc;
     output reg [31:0]inst;
 
-    reg [7:0]inst_mem_reg[115:0];
+    reg [7:0]inst_mem_reg[65535:0]; // Instruction memory
 
-    reg [31:0]inst_read;
-    integer file_inputs;
-    integer temp;
-    integer opener = 0;
-
-    // initial
-    // begin
-    //     $readmemb("instr.txt", inst_mem_reg);
-    // end
+    integer opener = 0; // Used to read the file only once
 
     always@(pc)
     begin
-
         if(opener==0)
         begin
             $readmemb("instr.txt", inst_mem_reg);
@@ -30,4 +22,4 @@ module instr_mem(pc, inst);
     end
 
     
-endmodule // instr_mem
+endmodule
