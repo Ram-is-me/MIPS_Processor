@@ -12,5 +12,9 @@ module instr_mem(pc, inst);
         inst = {inst_mem_reg[temp_pc],inst_mem_reg[temp_pc+1],inst_mem_reg[temp_pc+2],inst_mem_reg[temp_pc+3]};
     end
 
-    
+    // initial begin
+    // $readmemb(")
+    // end
+
+
 endmodule // instr_mem
