@@ -10,14 +10,14 @@ module ALU(operand1, operand2, alu_ctrl, res, flag_zero);
 always @(operand1, operand2, alu_ctrl) begin
 
     case (alu_ctrl)
-      4'b0000:  assign res= operand1 & operand2;
-      4'b0001:  assign res= operand1 | operand2;
-      4'b0010:  assign res= operand1 + operand2;
-      4'b0011:  assign res= operand1 - operand2;
-      4'b0100:  assign res= operand1 * operand2;
+      4'b0000:  res= operand1 & operand2;
+      4'b0001:  res= operand1 | operand2;
+      4'b0010:  res= operand1 + operand2;
+      4'b0011:  res= operand1 - operand2;
+      4'b0100:  res= operand1 * operand2;
     endcase
 
-    assign flag_zero = (res == 0)? 1 : 0;
+    flag_zero = (res == 0)? 1 : 0;
 
 end
 endmodule // alu

@@ -59,6 +59,12 @@ begin
     6'b000010: begin // JUMP instruction
         assign jump = 1;
     end
+
+    6'b111111: 
+        begin 
+            $display("here\n");
+            $finish;
+        end
     endcase
 
 end
