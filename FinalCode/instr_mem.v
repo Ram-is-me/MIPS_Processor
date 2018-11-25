@@ -17,7 +17,7 @@ module instr_mem(pc, inst);
             opener = 1;
         end
 
-        temp_pc = pc[15:0];
+        temp_pc = pc[15:0]; //Fetching Instruction
         inst = {inst_mem_reg[temp_pc],inst_mem_reg[temp_pc+1],inst_mem_reg[temp_pc+2],inst_mem_reg[temp_pc+3]};
     end
 

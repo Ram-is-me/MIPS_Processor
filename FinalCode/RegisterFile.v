@@ -22,7 +22,7 @@ integer init = 0;
 
 always@(*)
 begin
-    if(init==0) begin
+    if(init==0) begin  //Initialization of Register File
         rf[8] = 0;
         rf[9] = 0;
         rf[10] = 0;
@@ -42,22 +42,10 @@ begin
         init = 1;
     end
 end
-//REGISTER INITIALIZATION
-// generate
-// genvar i;
-// for (i=8;i<=23;i=i+1)
-//     begin
-//         initial rf[i] <= 32'b00000000000000000000000000000000;
-//     end
-// endgenerate
-
-//Extra Registers
-// reg [31:0] data1 = 32'b00000000000000000000000000000000;
-// reg [31:0] data2 = 32'b00000000000000000000000000000000;
 
 //Implementation of a MUX for  wreg
 always @(reg2,reg3,reg_dest)
-    if(reg_dest == 0)
+    if(reg_dest == 0)  //Deciding Register Destination for Write Back
         wreg <= reg2;
     else
         wreg <= reg3;

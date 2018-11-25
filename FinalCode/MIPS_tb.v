@@ -2,13 +2,19 @@ module MIPS();
 
   wire [31:0] pc; //Address of the instruction location from PC to INSTRUCTION MEMORY
   wire [31:0] instruction; //Instruction wire (contains instruction)
+  
+  //Breakdown wires
   wire [5:0] opcode;
   wire [5:0] func;
   wire [4:0] rs, rt, rd;
   wire [15:0] immediate;
   wire [25:0] jumper;
+  
+  //Next PC wires
   wire [31:0] write_data, read_data1, read_data2, alu_output, alu_operand2;
   wire [31:0] new_pc,temp_pc,jump_pc,branch_pc;
+  
+  //Control Signal wires
   wire [1:0] alu_op;
   wire [3:0] alu_control;
   wire alu_src;
@@ -27,6 +33,7 @@ module MIPS();
     .inst(instruction)
   );
 
+  //Wire Breakdown Module
   breakdown brkdown(
     .inst(instruction),
     .op(opcode),
@@ -38,6 +45,7 @@ module MIPS();
     .jumper(jumper)
   );
 
+  //Control Unit Module
   control_unit cntrl_unit(
     .opcode(opcode),
     .alu_op(alu_op),
@@ -51,6 +59,7 @@ module MIPS();
     .regWrite(regWrite)
   );
 
+  //Register File Module
   RegisterFile registerfile(
     .reg1(rs),
     .reg2(rt),
@@ -62,6 +71,7 @@ module MIPS();
     .reg_write(regWrite)
   );
 
+  //ALU MUX Module
   ALU_mux alu_mux(
     .alu_src(alu_src),
     .data2(read_data2),
@@ -69,6 +79,7 @@ module MIPS();
     .operand2(alu_operand2)  //wire from alu_mux to alu
   );
 
+  //Arithmetic Logic Unit Module
   ALU alu1(
     .operand1(read_data1),
     .operand2(alu_operand2),
@@ -77,12 +88,14 @@ module MIPS();
     .flag_zero(flag_zero) //wire from alu to and gate (for BRANCH instruction)
   );
 
+  //ALU Control Module
   ALU_control alu_ctrl(
     .func(func),
     .alu_op(alu_op),
     .alu_ctrl(alu_control)
   );
 
+  //Data Memory Module
   DataMem datamemory(
     .alu_res(alu_output),
     .write_data(read_data2), //wire from register file to data memory
@@ -92,11 +105,13 @@ module MIPS();
     .out_data(write_data) //wire from data memory back to registerfile as write_data
   );
 
+  //Program Counter Module
   pc PC(
     .in_pc(new_pc),
     .out_pc(pc)
   );
 
+  //Jump Module
   jump_pc Jump_pc(
       .in_pc(pc),
       .jumper(jumper),
@@ -104,12 +119,14 @@ module MIPS();
       .out_pc(temp_pc)
   );
 
+  //Branch PC Module
   branch_pc Branch_pc(
     .in_pc(temp_pc),
     .imm(immediate),
     .branch_pc(branch_pc)
   );
 
+  //New PC Module
   new_pc New_pc(
     .in_pc(temp_pc),
     .jump_pc(jump_pc),
@@ -120,6 +137,7 @@ module MIPS();
   );
 
   initial begin
+    //Generation of output file
     $dumpfile("MIPS.vcd");
     $dumpvars(0,MIPS);
   end
