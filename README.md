@@ -5,16 +5,16 @@ This is a Hardware Description of a non-pipelined MIPS processor with instructio
 Please refer to the picture [here](https://github.com/Ram-is-me/MIPSProcessor/blob/master/ProcessorLayout.jpeg) to understand the general layout of the MIPS processor.
 
 ## Supported Instructions
-1. load word (lw)
-2. store word (sw)
-3. add 
-4. sub
-5. mult
-6. and
-7. or
-8. halt
-9. branch
-10. jump
+* load word (lw)
+* store word (sw)
+* add 
+* sub
+* mult
+* and
+* or
+* halt
+* branch
+* jump
 
 The format and opcode are exactly as present in a MIPS processor.
 
