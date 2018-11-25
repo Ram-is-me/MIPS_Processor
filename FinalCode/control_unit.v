@@ -58,15 +58,8 @@ module control_unit(opcode, alu_op, alu_src, regDest, jump, branch, memRead, mem
             assign regWrite = 1;
         end
 
-<<<<<<< HEAD
         6'b000010: begin // JUMP instruction
             assign jump = 1;
-=======
-    6'b111111: //HALT instruction
-        begin 
-            $display("%0d %0d\n%0d %0d",datamemory.data[10],datamemory.data[11],datamemory.data[12],datamemory.data[13]);
-            $finish;
->>>>>>> a43f15cc112518455398bcfe76b472aae881d913
         end
 
         6'b111111: // HLT instruction
