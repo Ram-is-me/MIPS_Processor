@@ -1,10 +1,10 @@
 # MIPS Processor
 This is a Hardware Description of a non-pipelined MIPS processor with instructions to perform a 2x2 Matrix Multiplication
 
-##Layout
+## Layout
 Please refer to the picture [here](https://github.com/Ram-is-me/MIPSProcessor/blob/master/ProcessorLayout.jpeg) to understand the general layout of the MIPS processor.
 
-##Supported Instructions
+## Supported Instructions
 1. load word (lw)
 2. store word (sw)
 3. add 
