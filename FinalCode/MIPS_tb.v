@@ -1,4 +1,4 @@
-module processor();
+module MIPS();
 
   wire [31:0] pc; //Address of the instruction location from PC to INSTRUCTION MEMORY
   wire [31:0] instruction; //Instruction wire (contains instruction)
@@ -118,5 +118,10 @@ module processor();
     .branch(branch),
     .new_pc(new_pc)
   );
+
+  initial begin
+    $dumpfile("MIPS.vcd");
+    $dumpvars(0,MIPS);
+  end
 
 endmodule

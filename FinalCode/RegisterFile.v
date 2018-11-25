@@ -9,8 +9,8 @@ input reg_dest; //Register Destination Signal
 input reg_write; //Register Write Signal
 
 //OUTPUT SIGNALS
-output [31:0] rdat1; //Read Data 1
-output [31:0] rdat2; //Read Data 2
+output reg [31:0] rdat1 = 0; //Read Data 1
+output reg [31:0] rdat2 = 0; //Read Data 2
 
 //INTERNAL SIGNALS
 reg [5:0] wreg; //Write Register
@@ -18,30 +18,54 @@ reg [5:0] wreg; //Write Register
 //REGISTERS DECLARATION
 reg [31:0] rf [31:0]; //A set of 32 registers. As of now, $s0 - $s7 and $t0 - $t7 are supported, check note below for opcode table
 
-//REGISTER INITIALIZATION
-generate
-genvar i;
-for (i=8;i<=23;i=i+1)
-    begin
-        initial rf[i] <= 32'b00000000000000000000000000000000;
+integer init = 0;
+
+always@(*)
+begin
+    if(init==0) begin
+        rf[8] = 0;
+        rf[9] = 0;
+        rf[10] = 0;
+        rf[11] = 0;
+        rf[12] = 0;
+        rf[13] = 0;
+        rf[14] = 0;
+        rf[15] = 0;
+        rf[16] = 0;
+        rf[17] = 0;
+        rf[18] = 0;
+        rf[19] = 0;
+        rf[20] = 0;
+        rf[21] = 0;
+        rf[22] = 0;
+        rf[23] = 0;
+        init = 1;
     end
-endgenerate
+end
+//REGISTER INITIALIZATION
+// generate
+// genvar i;
+// for (i=8;i<=23;i=i+1)
+//     begin
+//         initial rf[i] <= 32'b00000000000000000000000000000000;
+//     end
+// endgenerate
 
 //Extra Registers
-reg [31:0] data1 = 32'b00000000000000000000000000000000;
-reg [31:0] data2 = 32'b00000000000000000000000000000000;
+// reg [31:0] data1 = 32'b00000000000000000000000000000000;
+// reg [31:0] data2 = 32'b00000000000000000000000000000000;
 
 //Implementation of a MUX for  wreg
-always @(*)
+always @(reg2,reg3,reg_dest)
     if(reg_dest == 0)
         wreg <= reg2;
     else
         wreg <= reg3;
 
-always @(*)
+always @(reg1, reg2, wreg)
 begin
-    data1 <= rf[reg1];
-    data2 <= rf[wreg];
+    rdat1 = rf[reg1];
+    rdat2 = rf[reg2];
     if(reg_write==1)  //Writing to Registers
     begin
         //Delay to be introduced by control unit

@@ -10,9 +10,9 @@ always @(func or alu_op)
 begin
     case(alu_op)
 
-        2'b00: assign alu_ctrl = 4'b0010; // lw/sw instruction
+        2'b00: alu_ctrl = 4'b0010; // lw/sw instruction
 
-        2'b01: assign alu_ctrl = 4'b0011; // BEQ
+        2'b01: alu_ctrl = 4'b0011; // BEQ
 
         2'b10: begin // R format look for func
             case(func)

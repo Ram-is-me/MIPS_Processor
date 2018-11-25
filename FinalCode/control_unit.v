@@ -62,7 +62,7 @@ begin
 
     6'b111111: 
         begin 
-            $display("here\n");
+            $display("%0d %0d\n%0d %0d",datamemory.data[10],datamemory.data[11],datamemory.data[12],datamemory.data[13]);
             $finish;
         end
     endcase
