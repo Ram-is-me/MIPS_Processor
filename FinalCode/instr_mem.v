@@ -45,4 +45,6 @@ module instr_mem(pc, inst);
         temp_pc = pc[15:0];
         inst = {inst_mem_reg[temp_pc],inst_mem_reg[temp_pc+1],inst_mem_reg[temp_pc+2],inst_mem_reg[temp_pc+3]};
     end
+
+    
 endmodule // instr_mem
