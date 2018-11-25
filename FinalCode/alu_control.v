@@ -1,12 +1,12 @@
 module ALU_control(func, alu_op, alu_ctrl);
 
+    //INPUT and OUTPUT
     input [5:0]func;
     input [1:0]alu_op;
     output reg [3:0]alu_ctrl;
 
 
 always @(func or alu_op)
-
 begin
     case(alu_op)
 
@@ -26,5 +26,4 @@ begin
     
     endcase
 end
-
 endmodule // alu_control

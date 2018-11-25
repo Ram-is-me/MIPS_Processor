@@ -1,7 +1,9 @@
 module control_unit(opcode, alu_op, alu_src, regDest, jump, branch, memRead, memtoReg, memWrite, regWrite);
 
+    //Opcode
     input [5:0]opcode;
 
+    //Control Signals
     output reg [1:0]alu_op;
     output reg alu_src;
     output reg regDest;
@@ -60,7 +62,7 @@ begin
         assign jump = 1;
     end
 
-    6'b111111: 
+    6'b111111: //HALT instruction
         begin 
             $display("%0d %0d\n%0d %0d",datamemory.data[10],datamemory.data[11],datamemory.data[12],datamemory.data[13]);
             $finish;
