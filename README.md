@@ -20,7 +20,7 @@ The format and opcode are exactly as present in a MIPS processor.
 
 The register file contains 16 registers, $s0-s7 and $t0-t7.
 
-The file 'instr.txt' contains binar representation of the assembly code to multiply a 2x2 matrix where the data values are stored in the data address location 0-7.
+The file 'instr.txt' contains binary representation of the assembly code to multiply a 2x2 matrix where the data values are stored in the data address location 0-7.
 
 The file 'data.txt' contains the 32 bit data values which represent the matrix.
 
